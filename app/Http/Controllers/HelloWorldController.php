@@ -7,7 +7,7 @@ class HelloWorldController extends Controller
 {
     public function postHello()
     {
-        return response()->json("Hello, POST World!");
+        return response()->json(["msg" => "Hello, POST World!"]);
     }
 
     public function postHelloName($name)
@@ -22,6 +22,6 @@ class HelloWorldController extends Controller
 
     public function helloName($name)
     {
-        return response()->json('Hello, ' . $name . ' World!');
+        return response()->json(["msg" => 'Hello, World!', "name" => $name]);
     }
 }
