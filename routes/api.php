@@ -10,14 +10,20 @@ Route::get(
     [HelloWorldController::class, 'hello']
 );
 
-Route::get('hello/{name}', [HelloWorldController::class, 'helloName']);
+Route::get(
+    'hello/{name}',
+    [HelloWorldController::class, 'helloName']
+);
 
 Route::post(
     'hello-post',
     [HelloWorldController::class, 'postHello']
 );
 
-Route::post('hello-post/{name}', [HelloWorldController::class, 'postHelloName']);
+Route::post(
+    'hello-post/{name}',
+    [HelloWorldController::class, 'postHelloName']
+);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
