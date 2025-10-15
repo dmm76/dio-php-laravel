@@ -21,7 +21,7 @@ Route::post(
 );
 
 Route::post(
-    'hello-post/{name}',
+    'hello-post/{name?}',
     [HelloWorldController::class, 'postHelloName']
 );
 
