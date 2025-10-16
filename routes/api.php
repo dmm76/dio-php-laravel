@@ -12,6 +12,7 @@ Route::get('bands/{id}', [\App\Http\Controllers\BandController::class, 'getById'
 Route::get('bands/gender/{gender}', [\App\Http\Controllers\BandController::class, 'getByGender']);
 
 Route::post('bands/store', [\App\Http\Controllers\BandController::class, 'postStore']);
+Route::post('bands/bulk', [\App\Http\Controllers\BandController::class, 'postStore']);
 
 /*
 Route::get(
