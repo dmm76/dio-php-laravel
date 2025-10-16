@@ -13,11 +13,13 @@ class BandController extends Controller
         return response()->json($bands);
     }
 
-    public function postStore()
+    public function postStore(Request $request)
     {
-        return response()->json([
-            'message' => 'Banda armazenada com sucesso!'
-        ], 201);
+        dd($request->all());
+
+        // return response()->json([
+        //     'message' => 'Banda armazenada com sucesso!'
+        // ], 201);
     }
 
 
