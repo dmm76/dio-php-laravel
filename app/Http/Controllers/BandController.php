@@ -13,6 +13,27 @@ class BandController extends Controller
         return response()->json($bands);
     }
 
+    public function getById(int $id)
+    {
+        $bands = $this->getBands();
+        $band = null;
+
+        foreach ($bands as $b) {
+            if ($b['id'] == (int)$id) {
+                $band = $b;
+                break;
+            }
+        }
+
+        if ($band === null) {
+            return response()->json([
+                'error' => 'Banda não encontrada.'
+            ], 404);
+        }
+
+        return response()->json($band);
+    }
+
     public function getBands()
     {
         return [

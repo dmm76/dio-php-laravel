@@ -7,6 +7,9 @@ use App\Http\Controllers\HelloWorldController;
 
 Route::get('bands', [\App\Http\Controllers\BandController::class, 'getAll']);
 
+Route::get('bands/{id}', [\App\Http\Controllers\BandController::class, 'getById']);
+
+
 /*
 Route::get(
     'hello',
