@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloWorldController;
 
 
+Route::get('bands', [\App\Http\Controllers\BandController::class, 'getAll']);
+
+/*
 Route::get(
     'hello',
     [HelloWorldController::class, 'hello']
@@ -24,6 +27,9 @@ Route::post(
     'hello-post/{name?}',
     [HelloWorldController::class, 'postHelloName']
 );
+*/
+
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
