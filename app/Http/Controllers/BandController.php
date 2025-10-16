@@ -13,6 +13,14 @@ class BandController extends Controller
         return response()->json($bands);
     }
 
+    public function postStore()
+    {
+        return response()->json([
+            'message' => 'Banda armazenada com sucesso!'
+        ], 201);
+    }
+
+
     public function getByGender($gender)
     {
         $bands = $this->getBands();
