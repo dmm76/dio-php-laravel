@@ -2,12 +2,14 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HelloWorldController;
+//  use App\Http\Controllers\HelloWorldController;
 
 
 Route::get('bands', [\App\Http\Controllers\BandController::class, 'getAll']);
 
 Route::get('bands/{id}', [\App\Http\Controllers\BandController::class, 'getById']);
+
+Route::get('bands/gender/{id}', [\App\Http\Controllers\BandController::class, 'getByGender']);
 
 
 /*

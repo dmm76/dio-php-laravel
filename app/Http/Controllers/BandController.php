@@ -13,6 +13,26 @@ class BandController extends Controller
         return response()->json($bands);
     }
 
+    public function getByGender($gender)
+    {
+        $bands = $this->getBands();
+        $filteredBands = [];
+
+        foreach ($bands as $band) {
+            if (stripos($band['genre'], $gender) !== false) {
+                $filteredBands[] = $band;
+            }
+        }
+
+        if (empty($filteredBands)) {
+            return response()->json([
+                'error' => 'Nenhuma banda encontrada para o gênero especificado.'
+            ], 404);
+        }
+
+        return response()->json($filteredBands);
+    }
+
     public function getById(int $id)
     {
         $bands = $this->getBands();
