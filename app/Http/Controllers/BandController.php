@@ -15,11 +15,14 @@ class BandController extends Controller
 
     public function postStore(Request $request)
     {
-        dd($request->all());
+        $data = $request->validate([
+            'id' => 'required|numeric',
+            'name' => 'required|string|min:5|max:255',
+            'genre' => 'required|string|max:255',
+            'formed' => 'required|integer|min:1900|max:' . date('Y'),
+        ]);
 
-        // return response()->json([
-        //     'message' => 'Banda armazenada com sucesso!'
-        // ], 201);
+        return $data ? response()->json($data, 201) : response()->json(['error' => 'Erro ao salvar a banda.'], 500);
     }
 
 
